@@ -1,0 +1,33 @@
+
+
+ 2. Explicação dos Componentes:
+
+ 2.1. Formulário (cadastroForm):
+
+   - Contém campos para o nome do fornecedor, CNPJ, segmento da empresa, tipo de produto fornecido e data de cadastro.
+     
+ 2.2. Campos de Entrada (input):
+
+   - Utilizados para coletar informações do usuário.
+   - Os campos incluem "nome," "cnpj," "segmento," "tipoProduto" e "dataCadastro."
+
+2.3. Botão de Envio (button):
+
+   - Ao ser clicado, aciona a função `cadastrarFornecedor()` para processar os dados do formulário.
+
+ 2.4. Função `cadastrarFornecedor()`:
+
+   - Obtém os valores dos campos do formulário.
+   - Verifica se todos os campos obrigatórios foram preenchidos.
+   - Exibe os dados no console (substituir por lógica de envio para o servidor).
+
+2.5. Função `exibirMensagemErro(mensagem)`:
+
+   - Exibe mensagens de erro no caso de campos vazios.
+   - Esconde a mensagem após alguns segundos (opcional).
+
+
+
+ 3. Integração com Banco de Dados:
+
+O código atual não possui integração direta com um banco de dados. Para realizar essa integração, precisará de uma linguagem de servidor, como PHP, Node.js, Python, etc., para processar os dados do formulário e interagir com o banco de dados.
