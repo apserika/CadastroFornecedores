@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Fornecedores</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-8">
+
+  <div class="max-w-md mx-auto bg-white rounded p-6 shadow-md">
+    <h2 class="text-2xl font-semibold mb-6">Cadastro de Fornecedor</h2>
+
+    <form id="cadastroForm">
+      <!-- Nome do Fornecedor -->
+      <div class="mb-4">
+        <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Razão Social</label>
+        <input type="text" id="nome" name="nome" class="w-full px-3 py-2 border rounded">
+      </div>
+
+      <!-- CNPJ do Fornecedor -->
+      <div class="mb-4">
+        <label for="cnpj" class="block text-gray-700 text-sm font-bold mb-2">CNPJ</label>
+        <input type="text" id="cnpj" name="cnpj" class="w-full px-3 py-2 border rounded">
+      </div>
+
+      <!-- Segmento da Empresa -->
+      <div class="mb-4">
+        <label for="segmento" class="block text-gray-700 text-sm font-bold mb-2">Segmento da Empresa</label>
+        <input type="text" id="segmento" name="segmento" class="w-full px-3 py-2 border rounded">
+      </div>
+
+      <!-- Tipo de Produto Fornecido -->
+      <div class="mb-4">
+        <label for="tipoProduto" class="block text-gray-700 text-sm font-bold mb-2">Tipo de Produto Fornecido</label>
+        <input type="text" id="tipoProduto" name="tipoProduto" class="w-full px-3 py-2 border rounded">
+      </div>
+
+      <!-- Data de Cadastro -->
+      <div class="mb-4">
+        <label for="dataCadastro" class="block text-gray-700 text-sm font-bold mb-2">Data de Cadastro</label>
+        <input type="date" id="dataCadastro" name="dataCadastro" class="w-full px-3 py-2 border rounded">
+      </div>
+
+      <!-- Botão de Envio -->
+      <div class="text-center">
+        <button type="button" onclick="cadastrarFornecedor()" class="bg-blue-500 text-white px-4 py-2 rounded">Cadastrar</button>
+      </div>
+
+      <!-- Mensagem de Erro -->
+      <div id="mensagemErro" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4"></div>
+    </form>
+
+    <script>
+      function cadastrarFornecedor() {
+      
+        const nome = document.getElementById('nome').value;
+        const cnpj = document.getElementById('cnpj').value;
+        const segmento = document.getElementById('segmento').value;
+        const tipoProduto = document.getElementById('tipoProduto').value;
+        const dataCadastro = document.getElementById('dataCadastro').value;
+
+     
+        if (!nome || !cnpj || !segmento || !tipoProduto || !dataCadastro) {
+          exibirMensagemErro('Por favor, preencha todos os campos.');
+          return;
+        }
+
+       
+        console.log('Nome:', nome);
+        console.log('CNPJ:', cnpj);
+        console.log('Segmento:', segmento);
+        console.log('Tipo de Produto:', tipoProduto);
+        console.log('Data de Cadastro:', dataCadastro);
+
+    
+      }
+
+      function exibirMensagemErro(mensagem) {
+        // Exibe a mensagem de erro
+        const divErro = document.getElementById('mensagemErro');
+        divErro.innerHTML = mensagem;
+        divErro.classList.remove('hidden');
+
+        setTimeout(() => {
+          divErro.innerHTML = '';
+          divErro.classList.add('hidden');
+        }, 5000);  
+      }
+    </script>
+  </div>
+</body>
+</html>
